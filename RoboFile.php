@@ -13,7 +13,7 @@ class RoboFile extends \Robo\Tasks
     public $name = 'Gutenberg Plugin Boilerplate';
     public $namespace = 'BlockBoilerplate';
     public $description = 'A boilerplate WordPress Gutenberg block';
-    public $blockName = 'example-block';
+    public $blockName = 'gutenberg-boilerplate';
 
     public function rename($machineName = null, $options = [
         'force' => false,
@@ -66,7 +66,5 @@ class RoboFile extends \Robo\Tasks
                 $this->taskComposerDumpAutoload()->run();
             }
         }
-
-        $this->_rename("src/{$this->blockName}", "src/{$blockName}");
     }
 }

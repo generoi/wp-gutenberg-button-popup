@@ -42,27 +42,32 @@ class Plugin
         Puc_v4_Factory::buildUpdateChecker($this->github_url, __FILE__, $this->plugin_name);
 
         add_action('plugins_loaded', [$this, 'init']);
+        add_action('init', [$this, 'load_textdomain']);
     }
 
     public function init()
     {
         add_action('enqueue_block_assets', [$this, 'block_assets']);
         add_action('enqueue_block_editor_assets', [$this, 'block_editor_assets']);
-
-        foreach (glob(__DIR__ . '/src/*/index.php') as $component) {
-            require $component;
-        }
     }
 
     public function block_assets()
     {
-        $this->enqueueStyle("{$this->plugin_name}/block/css", 'dist/blocks.style.build.css', ['wp-blocks']);
+        $this->enqueueStyle("{$this->plugin_name}/css", 'dist/style.css', ['wp-blocks']);
     }
 
     public function block_editor_assets()
     {
-        $this->enqueueScript("{$this->plugin_name}/block/js", 'dist/blocks.build.js', ['wp-blocks', 'wp-i18n', 'wp-element']);
-        $this->enqueueStyle("{$this->plugin_name}/block/editor/css", 'dist/blocks.editor.build.css', ['wp-edit-blocks']);
+        $this->enqueueStyle("{$this->plugin_name}/editor/css", 'dist/editor.css', ['wp-edit-blocks']);
+        $this->enqueueScript("{$this->plugin_name}/editor/js", 'dist/index.js', ['wp-blocks', 'wp-i18n', 'wp-element', 'wp-components', 'wp-editor']);
+        $this->localizeScript("${$this->plugin_name}/editor/js", gutenberg_get_jed_locale_data($this->plugin_name));
+    }
+
+    public function load_textdomain()
+    {
+        // WP Performance Pack
+        include __DIR__ . '/languages/javascript.php';
+        load_plugin_textdomain($this->plugin_name, false, dirname(plugin_basename(__FILE__)) . '/languages');
     }
 }
 

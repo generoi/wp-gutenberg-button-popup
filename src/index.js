@@ -1,10 +1,9 @@
-import './style.scss';
-import './editor.scss';
+import edit from './edit';
 
-const { __ } = wp.i18n;
-const { registerBlockType } = wp.blocks;
+import { __ } from '@wordpress/i18n';
+import { registerBlockType } from '@wordpress/blocks'
 
-registerBlockType('genero/example-block', {
+registerBlockType('genero/gutenberg-boilerplate', {
   title: __('Example block', 'wp-gutenberg-boilerplate'),
   icon: 'email',
   category: 'embed',
@@ -13,16 +12,10 @@ registerBlockType('genero/example-block', {
     align: ['center', 'wide', 'full'],
   },
   keywords: [
-    __('example'),
+    __('example', 'wp-gutenberg-boilerplate'),
   ],
 
-  edit: (props) => {
-    return (
-      <div className={ props.className }>
-          Example block
-      </div>
-    );
-  },
+  edit,
 
   save: (props) => {
     return (
