@@ -11,13 +11,11 @@ License URI:        http://opensource.org/licenses/MIT
 */
 namespace GeneroWP\BlockBoilerplate;
 
-use GeneroWP\BlockBoilerplate\blocks\example\Example;
 use Puc_v4_Factory;
 use GeneroWP\Common\Singleton;
 use GeneroWP\Common\Assets;
 use Illuminate\Support\Str;
 use ReflectionClass;
-use Symfony\Component\Finder\Iterator\FilenameFilterIterator;
 
 if (!defined('ABSPATH')) {
     exit;
