@@ -1,35 +1,8 @@
 const mix = require('laravel-mix');
+require('@tinypixelco/laravel-mix-wp-blocks');
 
-mix.sass('src/style.scss', 'dist/');
-mix.sass('src/editor.scss', 'dist/');
-mix.react('src/index.js', 'dist/');
+mix.sass('src/style.scss', 'dist')
+   .sass('src/editor.scss', 'dist');
 
-mix.babelConfig({
-  'plugins': [
-    [
-      '@wordpress/babel-plugin-makepot', { 'output': 'languages/javascript.pot' },
-    ],
-  ],
-});
-
-mix.webpackConfig({
-  externals: {
-    'lodash': 'lodash',
-    'react': 'React',
-    'react-dom': 'ReactDOM',
-    '@wordpress/components': 'wp.components',
-    '@wordpress/compose': 'wp.compose',
-    '@wordpress/element': 'wp.element',
-    '@wordpress/blocks': 'wp.blocks',
-    '@wordpress/editor': 'wp.editor',
-    '@wordpress/hooks': 'wp.hooks',
-    '@wordpress/date': 'wp.date',
-    '@wordpress/data': 'wp.data',
-    '@wordpress/i18n': 'wp.i18n',
-    '@wordpress/media': 'wp.media',
-    '@wordpress/keycodes': 'wp.keycodes',
-    '@wordpress/editPost': 'wp.editPost',
-    '@wordpress/plugins': 'wp.plugins',
-    '@wordpress/apiRequest': 'wp.apiRequest',
-  },
-});
+ mix.js('src/index.js', 'dist')
+  .blocks('src/editor.js', 'dist');

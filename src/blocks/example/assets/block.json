@@ -1,0 +1,11 @@
+{
+  "apiVersion": 2,
+  "name": "genero/example",
+  "category": "media",
+  "attributes": {},
+  "supports": {
+    "align": ["wide", "full"],
+    "color": {},
+    "html": false
+  }
+}

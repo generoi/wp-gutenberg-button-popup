@@ -1,5 +1,2 @@
-.editor-block-list__block[data-type^="genero/gutenberg-boilerplate"] {
-  .wp-block-genero-gutenberg-boilerplate {
-    //
-  }
-}
+// Load all block editor styles
+@import './blocks/example/assets/editor';
