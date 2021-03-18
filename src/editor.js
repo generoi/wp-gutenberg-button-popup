@@ -1,2 +1,3 @@
 // Load all block definitions
-import './blocks/example/assets';
+import './blocks/button_popup/assets';
+import './blocks/button_popups/assets';

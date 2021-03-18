@@ -67,7 +67,7 @@ class Plugin
     public function block_assets()
     {
         $this->enqueueStyle("{$this->plugin_name}/css", 'dist/style.css');
-        $this->enqueueScript("{$this->plugin_name}/js", 'dist/index.js');
+        $this->enqueueScript("{$this->plugin_name}/js", 'dist/index.js', [], false, true);
     }
 
     public function block_editor_assets()

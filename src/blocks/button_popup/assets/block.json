@@ -1,0 +1,25 @@
+{
+  "apiVersion": 2,
+  "name": "genero/button-popup",
+  "category": "design",
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "iconId": {
+      "type": "number"
+    },
+    "iconUrl": {
+      "type": "string"
+    }
+  },
+  "parent": [
+    "genero/button-popups"
+  ],
+  "supports": {
+		"align": true,
+		"alignWide": false,
+    "color": {},
+    "html": false
+  }
+}

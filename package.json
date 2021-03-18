@@ -36,5 +36,8 @@
     "stylelint-config-standard": "^20.0.0",
     "vue-template-compiler": "^2.6.12"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@wordpress/icons": "^2.10.0",
+    "classnames": "^2.2.6"
+  }
 }

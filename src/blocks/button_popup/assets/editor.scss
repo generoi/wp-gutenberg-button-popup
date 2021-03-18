@@ -1,0 +1,18 @@
+.wp-block-genero-button-popup__button-icon {
+  .components-placeholder {
+    padding: 0;
+    min-height: 0;
+    box-shadow: none;
+  }
+
+  .components-form-file-upload,
+  .components-placeholder__label,
+  .components-placeholder__instructions {
+    display: none;
+  }
+}
+
+.wp-block-genero-button-popup__popup.wp-block-genero-button-popup__popup {
+  z-index: 20;
+  max-width: calc(100vw - 280px);
+}

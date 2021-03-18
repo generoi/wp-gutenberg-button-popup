@@ -55,6 +55,7 @@ abstract class Block
         $this->classes = collect([
             'slug' => $this->className,
             'align' => !empty($this->attributes->align) ? Str::start($this->attributes->align, 'align') : false,
+            'justify' => !empty($this->attributes->contentJustification) ? Str::start($this->attributes->contentJustification, 'is-content-justification-') : false,
             'color' => !empty($this->attributes->textColor) ? "has-{$this->attributes->textColor}-color has-text-color" : false,
             'background' => !empty($this->attributes->backgroundColor) ? "has-{$this->attributes->backgroundColor}-background-color has-background" : false,
             'classes' => $this->attributes->className ?? false,
@@ -72,6 +73,7 @@ abstract class Block
     public function view($view, $attributes): string
     {
         extract($attributes);
+        unset($attributes);
 
         ob_start();
         require $this->getPath(sprintf('views/%s.php', $view));

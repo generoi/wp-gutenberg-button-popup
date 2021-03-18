@@ -1,0 +1,14 @@
+{
+  "apiVersion": 2,
+  "name": "genero/button-popups",
+  "category": "design",
+  "attributes": {
+    "contentJustification": {
+      "type": "string"
+    }
+  },
+  "supports": {
+    "align": ["wide", "full"],
+    "html": false
+  }
+}

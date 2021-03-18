@@ -8,9 +8,9 @@ import metadata from './block.json';
 
 registerBlockType(metadata.name, {
   ...metadata,
-  title: __('Gutenberg Example'),
-  description: __('Description'),
-  icon: 'image-flip-horizontal',
+  title: __('Button Popup'),
+  description: __(''),
+  icon: 'button',
   edit,
   save() {
     return <InnerBlocks.Content />;
