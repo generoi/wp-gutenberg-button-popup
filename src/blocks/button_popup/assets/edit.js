@@ -1,4 +1,4 @@
-import classnames from 'classnames';
+import { applyFilters } from '@wordpress/hooks';
 
 import {
   useBlockProps,
@@ -13,7 +13,7 @@ import {
 import { useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 
-const POPUP_TEMPLATE = [
+const DEFAULT_POPUP_TEMPLATE = [
   ['core/columns', {align: 'full'}, [
     ['core/column', {}, [
       ['core/image'],
@@ -48,7 +48,7 @@ function BlockEdit({
   const innerBlocksProps = useInnerBlocksProps({
     className: `${className}__popup__content`
   }, {
-    template: POPUP_TEMPLATE,
+    template: applyFilters('wp-gutenberg-button-popup.popupTemplate', DEFAULT_POPUP_TEMPLATE),
     templateInsertUpdatesSelection: false,
   });
 

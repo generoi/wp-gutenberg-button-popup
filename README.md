@@ -8,6 +8,31 @@
 
 - WordPress 5.6 or newer
 
+## Usage
+
+You can customize the default template for popups with a filter.
+
+```js
+import { addFilter } from '@wordpress/hooks'
+
+addFilter('wp-gutenberg-button-popup.popupTemplate', 'theme/popup-template', () => {
+  return [
+    ['core/columns', {align: 'full'}, [
+      ['core/column', {}, [
+        ['core/image'],
+        ['core/group']
+      ]],
+      ['core/column', {}, [
+        ['core/heading'],
+        ['core/paragraph'],
+        ['core/list'],
+        ['core/buttons'],
+      ]],
+    ]],
+  ];
+})
+```
+
 ## Development
 
 Install dependencies
