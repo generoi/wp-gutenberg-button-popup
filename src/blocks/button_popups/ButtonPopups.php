@@ -1,8 +1,8 @@
 <?php
 
-namespace GeneroWP\BlockBoilerplate\blocks\button_popups;
+namespace GeneroWP\BlockButtonPopup\blocks\button_popups;
 
-use GeneroWP\BlockBoilerplate\Block;
+use GeneroWP\BlockButtonPopup\Block;
 
 class ButtonPopups extends Block
 {

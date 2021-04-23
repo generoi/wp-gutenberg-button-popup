@@ -1,6 +1,6 @@
 <?php
 
-namespace GeneroWP\BlockBoilerplate;
+namespace GeneroWP\BlockButtonPopup;
 
 use Illuminate\Support\Str;
 use ReflectionClass;

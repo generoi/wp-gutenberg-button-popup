@@ -17,15 +17,14 @@ const DEFAULT_POPUP_TEMPLATE = [
   ['core/columns', {align: 'full'}, [
     ['core/column', {}, [
       ['core/image'],
-      ['core/group']
+      ['core/group'],
     ]],
     ['core/column', {}, [
       ['core/heading'],
       ['core/paragraph'],
       ['core/list'],
-      ['core/buttons'],
     ]],
-  ]]
+  ]],
 ];
 
 function BlockEdit({
@@ -46,7 +45,7 @@ function BlockEdit({
 
   const blockProps = useBlockProps();
   const innerBlocksProps = useInnerBlocksProps({
-    className: `${className}__popup__content`
+    className: `${className}__popup__content`,
   }, {
     template: applyFilters('wp-gutenberg-button-popup.popupTemplate', DEFAULT_POPUP_TEMPLATE),
     templateInsertUpdatesSelection: false,
