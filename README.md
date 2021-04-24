@@ -4,6 +4,10 @@
 
 ![gutenberg-popups](https://user-images.githubusercontent.com/302736/111697504-69c25900-8814-11eb-8d05-636bc41b17bc.gif)
 
+## Installation
+
+    composer require generoi/wp-gutenberg-button-popup
+    
 ## Requirements
 
 - WordPress 5.6 or newer
