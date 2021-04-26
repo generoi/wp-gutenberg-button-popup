@@ -69,7 +69,7 @@ class Plugin
             wp_enqueue_style(
                 'wp-gutenberg-button-popup/frontend.css',
                 $this->assetUrl('/dist/frontend.css'),
-                ['wp-edit-blocks', 'common'],
+                [],
                 null
             );
             wp_enqueue_script(
