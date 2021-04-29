@@ -10,5 +10,8 @@
   "supports": {
     "align": ["wide", "full"],
     "html": false
-  }
+  },
+  "editorScript": "file:../dist/index.js",
+  "editorStyle": "file:../dist/editor.css",
+  "style": "file:../dist/style.css"
 }

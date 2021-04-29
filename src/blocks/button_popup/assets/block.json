@@ -17,9 +17,13 @@
     "genero/button-popups"
   ],
   "supports": {
-		"align": true,
-		"alignWide": false,
+    "align": true,
+    "alignWide": false,
     "color": {},
     "html": false
-  }
+  },
+  "editorScript": "file:../dist/index.js",
+  "script": "file:../dist/script.js",
+  "editorStyle": "file:../dist/editor.css",
+  "style": "file:../dist/style.css"
 }

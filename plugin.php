@@ -41,9 +41,6 @@ class Plugin
 
     public function init()
     {
-        add_action('enqueue_block_editor_assets', [$this, 'blockEditorAssets']);
-        add_action('enqueue_block_assets', [$this, 'blockAssets']);
-
         foreach (glob(__DIR__ . '/src/blocks/*/*.php') as $file) {
             $composer = __NAMESPACE__ . str_replace(
                 ['/', '.php'],
@@ -54,49 +51,6 @@ class Plugin
             if (is_subclass_of($composer, Block::class) && ! (new ReflectionClass($composer))->isAbstract()) {
                 (new $composer())->compose();
             }
-        }
-    }
-
-    public function assetUrl(string $asset): string
-    {
-        $manifest = json_decode(file_get_contents(__DIR__ . '/mix-manifest.json'), true);
-        return plugins_url($manifest[$asset], __FILE__);
-    }
-
-    public function blockAssets()
-    {
-        if ($manifest = include __DIR__ . '/dist/frontend.asset.php') {
-            wp_enqueue_style(
-                'wp-gutenberg-button-popup/frontend.css',
-                $this->assetUrl('/dist/frontend.css'),
-                [],
-                null
-            );
-            wp_enqueue_script(
-                'wp-gutenberg-button-popup/frontend.js',
-                $this->assetUrl('/dist/frontend.js'),
-                $manifest['dependencies'],
-                null,
-                true
-            );
-        }
-    }
-
-    public function blockEditorAssets()
-    {
-        if ($manifest = include __DIR__ . '/dist/editor.asset.php') {
-            wp_enqueue_style(
-                'wp-gutenberg-button-popup/editor.css',
-                $this->assetUrl('/dist/editor.css'),
-                ['wp-edit-blocks', 'common'],
-                null
-            );
-            wp_enqueue_script(
-                'wp-gutenberg-button-popup/editor.js',
-                $this->assetUrl('/dist/editor.js'),
-                $manifest['dependencies'],
-                null
-            );
         }
     }
 }
