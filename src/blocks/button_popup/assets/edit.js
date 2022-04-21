@@ -2,7 +2,7 @@ import { applyFilters } from '@wordpress/hooks';
 
 import {
   useBlockProps,
-  __experimentalUseInnerBlocksProps as useInnerBlocksProps,
+  useInnerBlocksProps,
   BlockControls,
   RichText,
 } from '@wordpress/block-editor';

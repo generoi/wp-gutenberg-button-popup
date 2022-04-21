@@ -2,7 +2,7 @@ import classnames from 'classnames';
 import {
   BlockControls,
   useBlockProps,
-  __experimentalUseInnerBlocksProps as useInnerBlocksProps,
+  useInnerBlocksProps,
 } from '@wordpress/block-editor';
 import { ToolbarGroup, ToolbarItem } from '@wordpress/components';
 import ContentJustificationDropdown from './content-justification-dropdown';
