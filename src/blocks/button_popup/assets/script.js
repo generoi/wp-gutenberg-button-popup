@@ -56,5 +56,5 @@ window.gbpAddListeners = addListeners;
 if (document.readyState === 'complete') {
   addListeners();
 } else {
-  document.addEventListener('DOMContentLoaded', addListeners);
+  document.addEventListener('DOMContentLoaded', () => addListeners());
 }
