@@ -7,7 +7,14 @@ use ReflectionClass;
 
 abstract class Block
 {
-    public function getPath(string $path = null): string
+    protected $block;
+    protected $name;
+    protected $attributes;
+    protected $content;
+    protected $className;
+    protected $classes;
+
+    public function getPath(?string $path = null): string
     {
         if ($path) {
             return sprintf('%s/%s', $this->getDir(), $path);
