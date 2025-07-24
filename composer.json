@@ -17,16 +17,7 @@
   "support": {
     "issues": "https://github.com/generoi/wp-gutenberg-button-popup/issues"
   },
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://wpackagist.org"
-    },
-    {
-      "type": "composer",
-      "url": "https://packagist.minasithil.genero.fi/"
-    }
-  ],
+  "repositories": [],
   "require": {
     "php": ">=7.0.0",
     "illuminate/support": "^7.0|^8.0|^9.0|^10.0|^11.0|^12.0"
